@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Orçamentos - Sistema</title>
+    <link rel="stylesheet" href="../style/listaOrcamentos.css">
+</head>
+<body>
+    <!-- Botão para retornar ao menu principal -->
+    <a href="menu.html" class="botaoVoltar">Voltar</a>
+
+    <div class="pageContent">
+        <div class="categoryCard">
+            <h1>Orçamentos Cadastrados</h1>
+            
+            <!-- Seção de Filtros para Pesquisa -->
+            <div class="searchArea" style="display: flex; gap: 15px; margin-bottom: 25px; align-items: flex-end; flex-wrap: wrap; background: #f7fbff; padding: 20px; border-radius: 8px; border: 1px solid #c4d6e8;">
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <label for="searchOrcamentoId" style="font-weight: bold; color: #24445f; font-size: 0.9rem;">ID Orçamento</label>
+                    <input type="number" id="searchOrcamentoId" placeholder="Ex: 1" style="padding: 8px; border-radius: 4px; border: 1px solid #a9bfd3;">
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <label for="searchClienteId" style="font-weight: bold; color: #24445f; font-size: 0.9rem;">ID Cliente</label>
+                    <input type="number" id="searchClienteId" placeholder="Ex: 5" style="padding: 8px; border-radius: 4px; border: 1px solid #a9bfd3;">
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <label for="searchClienteNome" style="font-weight: bold; color: #24445f; font-size: 0.9rem;">Nome do Cliente</label>
+                    <input type="text" id="searchClienteNome" placeholder="Nome..." style="padding: 8px; border-radius: 4px; border: 1px solid #a9bfd3;">
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <label for="searchData" style="font-weight: bold; color: #24445f; font-size: 0.9rem;">Data Emissão</label>
+                    <input type="date" id="searchData" style="padding: 8px; border-radius: 4px; border: 1px solid #a9bfd3;">
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <label for="searchValidade" style="font-weight: bold; color: #24445f; font-size: 0.9rem;">Data Validade</label>
+                    <input type="date" id="searchValidade" style="padding: 8px; border-radius: 4px; border: 1px solid #a9bfd3;">
+                </div>
+                <button type="button" id="btnPesquisar" style="padding: 10px 20px; background-color: #1b67a8; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background 0.2s;">Pesquisar</button>
+            </div>
+            
+            <table id="listaOrcamentosTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Data de Emissão</th>
+                        <th>Validade</th>
+                        <th>Valor Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- As linhas serão preenchidas pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Bibliotecas e Lógica -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../script/listaOrcamentos.js"></script>
+</body>
+</html>

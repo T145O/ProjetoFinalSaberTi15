@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCP</title>
+    <link rel="stylesheet" href="../style/cadastroUsuario.css">
+</head>
+
+<body>
+    <main class="pageContent">
+        <section class="categoryCard">
+            <h1 class="pageTitle">Criação de conta</h1>
+            <div class="card">
+                <form id="cadastroForm" class="categoryForm">
+                    <div class="fieldGroup">
+                        <label for="usuario">Digite seu nome de usuario</label>
+                        <input type="text" placeholder="Usuario" name="usuario" id="usuario" required>
+
+                        <label for="nomeCompleto">Digite seu nome completo</label>
+                        <input type="text" placeholder="Nome completo" name="nomeCompleto" id="nomeCompleto" required>
+
+                        <label for="senha">Digite sua senha</label>
+                        <input type="password" id="senha" required>
+
+                        <label for="confirmarSenha">Confirme sua senha</label>
+                        <input type="password" id="confirmarSenha" required>
+                    </div>
+                    <button type="submit">Cadastrar</button>
+                    <div class="signupLink">
+                        <hr><a href="../index.html">Já tenho uma conta</a>
+                        <hr>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../script/cadastroUsuario.js"></script>
+
+</html>

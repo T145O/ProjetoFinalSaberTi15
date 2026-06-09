@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, rgba(232, 244, 255, 0.96), rgba(204, 225, 244, 0.9)), #d9eaf7;
+    color: #17324d;
+}
+
+.botaoVoltar {
+    position: fixed;
+    top: 20px;
+    left: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 16px;
+    color: #1b67a8;
+    background-color: #f7fbff;
+    border: 1px solid #a9bfd3;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(15, 59, 98, 0.1);
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botaoVoltar:hover {
+    color: #0d4f85;
+    background-color: #ffffff;
+    border-color: #2b78c2;
+    box-shadow: 0 10px 20px rgba(21, 89, 143, 0.14);
+    transform: translateY(-1px);
+}
+
+.pageContent {
+    padding: 90px 24px 40px;
+}
+
+.categoryCard {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 18px 45px rgba(15, 59, 98, 0.16);
+    border: 1px solid #c4d6e8;
+}
+
+h1 { color: #1b67a8; margin-bottom: 25px; }
+
+/* Estilo da área de busca similar ao listaOrcamentos */
+.searchArea {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    background: #f7fbff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #c4d6e8;
+}
+
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filterGroup label {
+    font-weight: bold;
+    color: #24445f;
+    font-size: 0.9rem;
+}
+
+.filterGroup input, .filterGroup select {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #a9bfd3;
+}
+
+#btnPesquisar {
+    padding: 11px 25px;
+    background-color: #1b67a8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+#btnPesquisar:hover { background-color: #15598f; }
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #e0e6ed;
+}
+
+th { background-color: #f8f9fa; color: #1b67a8; }
