@@ -61,7 +61,7 @@ async function checkUser(evento) {
   // Se data tiver valor, significa que o Supabase encontrou o usuario e a senha.
   if (data) {
     // Redireciona o usuario para a tela menu.html.
-    window.location.href = "../paginas/menu.html";
+    window.location.href = "paginas/menu.html";
     return;
   }
 
