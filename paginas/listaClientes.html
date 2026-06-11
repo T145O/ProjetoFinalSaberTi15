@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar Clientes - SCP</title>
+    <link rel="stylesheet" href="../style/listaClientes.css">
+    <style>
+        /* Reutilizando os padrões visuais do projeto para a área de busca e tabela */
+        .searchArea {
+            display: flex;
+            align-items: flex-end;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #f7fbff;
+            border-radius: 8px;
+            border: 1px solid #c4d6e8;
+        }
+
+        .filterGroup {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            flex: 1;
+        }
+
+        .filterGroup label {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #24445f;
+        }
+
+        .filterGroup input, .filterGroup select {
+            padding: 10px;
+            border: 1px solid #a9bfd3;
+            border-radius: 4px;
+        }
+
+        /* Estilo unificado para o Botão de Pesquisa e os Links de Edição */
+        #btnPesquisar, 
+        #listaClientesTable tbody td a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1b67a8;
+            color: white !important;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s, transform 0.1s;
+            text-align: center;
+        }
+
+        #btnPesquisar:hover, 
+        #listaClientesTable tbody td a:hover {
+            background-color: #155184;
+            transform: translateY(-1px);
+        }
+
+        #btnPesquisar:active, 
+        #listaClientesTable tbody td a:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="menu.html" class="botaoVoltar">Voltar</a>
+    <div class="pageContent">
+        <div class="categoryCard">
+            <h1>Clientes Cadastrados</h1>
+
+            <!-- Seção de Filtros para Pesquisa -->
+            <div class="searchArea">
+                <div class="filterGroup">
+                    <label for="searchNome">Nome do Cliente</label>
+                    <input type="text" id="searchNome" placeholder="Digite o nome...">
+                </div>
+                <div class="filterGroup">
+                    <label for="searchTipo">Tipo</label>
+                    <select id="searchTipo">
+                        <option value="">Todos</option>
+                        <option value="F">Pessoa Física (F)</option>
+                        <option value="J">Pessoa Jurídica (J)</option>
+                    </select>
+                </div>
+                <div class="filterGroup">
+                    <label for="searchCpfCnpj">CPF/CNPJ</label>
+                    <input type="text" id="searchCpfCnpj" placeholder="Ex: 000.000.000-00">
+                </div>
+                <button type="button" id="btnPesquisar">Pesquisar</button>
+            </div>
+
+            <table id="listaClientesTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>CPF / CNPJ</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Preenchido via JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../script/listaClientes.js"></script>
+</body>
+
+</html>

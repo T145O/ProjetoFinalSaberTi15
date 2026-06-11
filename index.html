@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCP</title>
+    <link rel="stylesheet" href="style/login.css">
+</head>
+
+<body>
+    <h1 class="pageTitle">Sistema de Controle de Produtos e Orçamento</h1>
+    <div class="containerGrid">
+        <div class="container loginArea">
+            <div class="loginCard">
+                <h2>Fazer Login</h2>
+                <form id="LoginForm" class="container LoginForm loginForm">
+                    <div class="fieldGroup">
+                        <label for="username">Usuário</label>
+                        <input type="text" placeholder="Usuário" id="username" class="bordaRedonda">
+                    </div>
+                    <div class="fieldGroup">
+                        <label for="senha">Senha</label>
+                        <input type="password" placeholder="Senha" id="senha" class="bordaRedonda">
+                    </div>
+                    <button type="submit" id="enviar" class="bordaRedonda">Entrar</button>
+                </form>
+            </div>
+        </div>
+        <div class="infoArea">
+            <div class="infoCard">
+                <p>
+                    Esse é o trabalho final da 15º Edição do curso Saber TI disponibilizado pela Accion Sistemas,
+                    ele foi feito com o intuito de apresentar as habilidades adquiridas ao longo do curso que
+                    consistiram em manipulação de HTML e JavaScript, introdução a banco de dados e o uso de
+                    maneira correta da Inteligência Artificial.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script/login.js"></script>
+
+</html>

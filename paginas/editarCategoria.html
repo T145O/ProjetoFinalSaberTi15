@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Categoria - Sistema</title>
+    <link rel="stylesheet" href="../style/listaOrcamentos.css">
+    <style>
+        .formGroup { margin-bottom: 15px; display: flex; flex-direction: column; gap: 5px; }
+        .formGroup label { font-weight: bold; color: #24445f; font-size: 0.9rem; }
+        .formGroup input[type="text"] { padding: 10px; border-radius: 4px; border: 1px solid #a9bfd3; }
+        .btnSave { padding: 12px 20px; background-color: #1b67a8; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 15px; transition: background 0.2s; }
+        .btnSave:hover { background-color: #155184; }
+        .btnDelete { padding: 12px 20px; background-color: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 15px; transition: background 0.2s; }
+        .btnDelete:hover { background-color: #a71d2a; }
+        #codigoConfirmacao { background: #d1ecf1; padding: 4px 10px; border-radius: 4px; letter-spacing: 3px; font-family: monospace; font-size: 1.2rem; color: #0c5460; }
+        .securitySection { background: #fdfdfe; border: 1px dashed #a9bfd3; padding: 15px; border-radius: 8px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <a href="listaCategorias.html" class="botaoVoltar">Voltar</a>
+
+    <div class="pageContent">
+        <div class="categoryCard">
+            <h1>Editar Categoria de Produto</h1>
+            
+            <form id="editarCategoriaForm" style="max-width: 500px; margin-top: 20px;">
+                <div class="formGroup">
+                    <label for="categoriaId">ID (Somente Leitura)</label>
+                    <input type="text" id="categoriaId" readonly style="background-color: #e9ecef; cursor: not-allowed;">
+                </div>
+
+                <div class="formGroup">
+                    <label for="descricao">Descrição da Categoria</label>
+                    <input type="text" id="descricao" required>
+                </div>
+
+                <div class="securitySection">
+                    <p style="margin: 0 0 10px 0; font-weight: bold; color: #856404;">Confirmação de Segurança</p>
+                    <p style="margin-bottom: 15px; font-size: 0.9rem;">Digite o código para autorizar: <span id="codigoConfirmacao"></span></p>
+                    <input type="text" id="inputConfirmacao" placeholder="Digite os 5 caracteres" required style="width: 100%; padding: 8px; box-sizing: border-box;">
+                </div>
+
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <button type="submit" class="btnSave">Salvar Alterações</button>
+                    <button type="button" id="btnExcluir" class="btnDelete">Excluir Categoria</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../script/editarCategoria.js"></script>
+</body>
+</html>

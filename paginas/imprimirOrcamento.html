@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Orçamento - SCP</title>
+    <link rel="stylesheet" href="../style/novoOrcamento.css">
+    <style>
+        /* Ajustes específicos para a visualização de impressão */
+        .print-container {
+            background: white;
+            padding: 40px;
+            border-radius: 0;
+            box-shadow: none;
+            border: 1px solid #ccc;
+        }
+        .header-print {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid #1b67a8;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .info-section {
+            margin-bottom: 30px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .btn-acoes {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        @media print {
+            .btn-acoes, .botaoVoltar { display: none !important; }
+            body { background: white !important; }
+            .pageContent { padding: 0 !important; }
+            .categoryCard { border: none !important; width: 100% !important; }
+        }
+    </style>
+</head>
+<body>
+    <a href="listaOrcamentos.html" class="botaoVoltar">Voltar</a>
+
+    <div class="pageContent">
+        <div class="categoryCard print-container">
+            <div class="btn-acoes">
+                <button onclick="window.print()">Imprimir Agora</button>
+            </div>
+
+            <div class="header-print">
+                <div>
+                    <h1 style="text-align: left; margin: 0;">ORÇAMENTO #<span id="displayId">...</span></h1>
+                </div>
+                <div style="text-align: right;">
+                    <p><strong>Data:</strong> <span id="displayData">...</span></p>
+                    <p><strong>Validade:</strong> <span id="displayValidade">...</span></p>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h2>Dados do Cliente</h2>
+                <div class="info-grid">
+                    <p><strong>Nome:</strong> <span id="displayCliente">...</span></p>
+                    <p><strong>CPF/CNPJ:</strong> <span id="displayCpfCnpj">...</span></p>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h2>Itens do Orçamento</h2>
+                <table id="itensOrcamentoTable">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th>Vl. Unitário</th>
+                            <th>Vl. Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Preenchido via JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="total-display">
+                Valor Total: R$ <span id="valorTotalOrcamento">0.00</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../script/imprimirOrcamento.js"></script>
+</body>
+</html>

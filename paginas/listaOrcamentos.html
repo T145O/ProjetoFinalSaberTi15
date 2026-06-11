@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Orçamentos - SCP</title>
+    <link rel="stylesheet" href="../style/listaOrcamentos.css">
+</head>
+<body>
+    <a href="menu.html" class="botaoVoltar">Voltar</a>
+    <div class="pageContent">
+        <div class="categoryCard">
+            <h1>Orçamentos Cadastrados</h1>
+            
+            <div class="searchArea">
+                <div class="filterGroup">
+                    <label for="searchId">ID Orçamento</label>
+                    <input type="number" id="searchId" placeholder="Ex: 1">
+                </div>
+                <div class="filterGroup">
+                    <label for="searchCliente">ID Cliente</label>
+                    <input type="number" id="searchCliente" placeholder="Ex: 10">
+                </div>
+                <div class="filterGroup">
+                    <label for="searchStatus">Status</label>
+                    <select id="searchStatus" class="filterGroup">
+                        <option value="">Todos</option>
+                        <option value="ABERTO">Aberto</option>
+                        <option value="FECHADO">Fechado</option>
+                    </select>
+                </div>
+                <button type="button" id="btnPesquisar">Pesquisar</button>
+            </div>
+
+            <table id="listaOrcamentosTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Data</th>
+                        <th>Validade</th>
+                        <th>Status</th>
+                        <th>Total (R$)</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Preenchido via JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../script/listaOrcamentos.js"></script>
+</body>
+</html>
